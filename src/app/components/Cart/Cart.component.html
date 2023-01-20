@@ -1,10 +1,9 @@
-<div class="container">
+<div class="container mt-2">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div style="display: flex">
-      <div>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6">
         <div class="form-group">
-          <label for="productName">Product Name</label>
-          {{ data.Name }}
+          <h5>Product Name:{{ data.Name }}</h5> 
         </div>
         <div class="form-group">
           <label for="quantity">Quantity</label>
@@ -17,9 +16,9 @@
             placeholder="quantity"
           />
         </div>
+        <br>
         <div class="form-group">
-          <label for="rate">Rate</label>
-          ${{ data.Price }}
+          <h5 for="rate">Rate:${{ data.Price }}</h5> 
         </div>
         <div class="form-group">
           <label for="totalprice">TotalPrice</label>
@@ -31,8 +30,11 @@
             readonly
           />
         </div>
+        <br>
+        
       </div>
-      <div>
+      <div class="col-sm-12 col-md-6 col-lg-6 second_div">
+        <h4>User Payment Details</h4>
         <div class="form-group">
           <label for="address">Address</label>
           <input
@@ -41,8 +43,7 @@
             formControlName="address"
             placeholder="address"
           />
-        </div>
-
+        </div> 
         <div class="form-group">
           <label for="cardno">Card No</label>
           <input
@@ -50,20 +51,25 @@
             class="form-control"
             formControlName="cardno"
             placeholder="cardno"
+            required="true"
+            maxlength="16"
           />
-        </div>
+        </div> 
         <div class="form-group">
           <label for="expiry">Expiry</label>
           <input
-            type="text"
+            type="date"
             class="form-control"
             formControlName="expiry"
             placeholder="expiry"
+            required="true"
           />
+          
         </div>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    {{ this.form.value | json }}
+    <!-- {{ this.form.value | json }} -->
+    <button type="submit" class="btn btn-primary mt-2" [disabled]="this.form.invalid">Submit</button>
   </form>
+  <p class="success">{{successMessage}}</p>
 </div>

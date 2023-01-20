@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 const baseUrl = "../assets/foods.json";
 @Component({
@@ -29,10 +29,11 @@ export class CartComponent implements OnInit {
   address: string = "";
 
   form!: FormGroup;
-
+  successMessage:string=''
   constructor(private http: HttpClient,
     private activatedRoute: ActivatedRoute,
-    private fb: FormBuilder,) { }
+    private fb: FormBuilder,
+    private router: Router) { }
 
   ngOnInit() {
     this.createForm();
@@ -46,29 +47,37 @@ export class CartComponent implements OnInit {
       totalPrice: new FormControl(0),
       address: new FormControl(''),
       quantity: new FormControl(1),
-      cardno: new FormControl(''),
-      expiry: new FormControl(''),
+      cardno: new FormControl('',Validators.required),
+      expiry: new FormControl('',Validators.required),
       id: new FormControl(0)
     })
   }
 
-  onSubmit() {
+  //function to submit the form
+  onSubmit() { 
     console.log(this.form.value);
+    this.form.get('quantity')?.setValue(1);
+    this.form.get('cardno')?.reset();
+    this.form.get('expiry')?.reset();
+    this.successMessage='Order Placed Successfully';
+    setTimeout(()=>{
+      this.router.navigateByUrl('/home');
+    },2000);
+
+    
   }
 
   loadDetails() {
     this.http.get(baseUrl).subscribe((res: any) => {
       this.data = res.find((food: any) => food.id == this.id);
       this.form.get('productName')?.setValue(this.data.Name);
-      this.form.get('rate')?.setValue(this.data.Price);
-      console.log(this.id);
-      console.log(this.data);
+      this.form.get('rate')?.setValue(this.data.Price); 
       this.calculate();
     })
   }
 
+  //function to calculate the total price of the food
   calculate() {
-    this.form.get('totalPrice')?.setValue(this.form.get('rate')?.value * this.form.get('quantity')?.value);
-    console.log(this.form.get('totalPrice')?.value);
+    this.form.get('totalPrice')?.setValue(this.form.get('rate')?.value * this.form.get('quantity')?.value); 
   }
 }
