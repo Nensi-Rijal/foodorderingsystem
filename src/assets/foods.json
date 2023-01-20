@@ -2,70 +2,70 @@
         {   "id":0,
             "Name": "Butter Chicken",
             "Description": "A classic North Indian dish made with tender chunks of chicken cooked in a rich tomato-based sauce with butter and cream.",
-            "Price": "$12.99",
+            "Price": 12.99,
             "Image": "https://www.danishfoodlovers.com/wp-content/uploads/2022/09/Butter-chicken-3.jpg"
         },
         {
             "id":1,
             "Name": "Palak Paneer",
             "Description": "A dish made with spinach and paneer (Indian cottage cheese) cooked in a flavorful onion and tomato-based sauce.",
-            "Price": "$9.99",
+            "Price": 9.99,
             "Image": "https://myfoodstory.com/wp-content/uploads/2017/01/Easy-Palak-Paneer-2.jpg"
         },
         {
             "id":2,
             "Name": "Biryani",
             "Description": "A popular mixed rice dish made with spices, meat or vegetables, and saffron.",
-            "Price": "$14.99",
+            "Price": 14.99,
             "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/lfxiqewvbozktnsvhdus"
         },
         {
             "id":3,
             "Name": "Samosas",
             "Description": "A fried or baked pastry filled with spiced vegetables or meat.",
-            "Price": "$6.99",
+            "Price": 6.99,
             "Image": "https://www.seriouseats.com/thmb/4HxqFS6SHsh1XBCXWWHbsyrGOxI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20210909-SAMOSAS-ANDREWJANJIGIAN-86-ca872c2eae8e4e7eb4e7b47cfad8715e.jpg"
         },
         {
             "id":4,
             "Name": "Dosa",
             "Description": "A South Indian dish made with a fermented batter of rice and lentils, served with a variety of savory fillings and chutneys.",
-            "Price": "$8.99",
+            "Price": 8.99,
             "Image": "https://images.livemint.com/img/2021/07/05/1140x641/crispy-dosa-temple-recipe_1625469413436_1625469443302.jpg"
         },
         {
             "id":5,
             "Name": "Vada Pav",
             "Description": "A popular street food from Mumbai, consisting of a deep-fried potato dumpling served in a bread roll.",
-            "Price": "$4.99",
+            "Price": 4.99,
             "Image": "http://www.yummyfoodrecipes.in/resources/picture/org/Marathi-dish.jpg"
         },
         {
             "id":6,
             "Name": "Idli",
             "Description": "A South Indian dish made from steamed fermented black lentils and rice.",
-            "Price": "$6.99",
+            "Price": 6.99,
             "Image": "https://vaya.in/recipes/wp-content/uploads/2018/02/Idli-and-Sambar-1.jpg"
         },
         {
             "id":7,
             "Name": "Naan",
             "Description": "A type of leavened bread traditionally cooked in a tandoor (clay oven).",
-            "Price": "$3.99",
+            "Price": 3.99,
             "Image": "https://www.kitchensanctuary.com/wp-content/uploads/2021/03/Garlic-Naan-square-FS-42-500x375.jpg"
         },
         {
             "id":8,
             "Name": "Papadum",
             "Description": "A thin, crisp disc-shaped food made from lentil flour, often served as an accompaniment to a meal.",
-            "Price": "$2.99",
+            "Price": 2.99,
             "Image": "https://cdn.shopify.com/s/files/1/0451/5473/0141/articles/papad_1_580x.jpg?v=1596656422"
         },
         {
             "id":9,
             "Name": "Raita",
             "Description": "A popular Indian side dish made of yogurt and various vegetables or fruits.",
-            "Price": "$4.99",
+            "Price": 4.99,
             "Image": "https://www.cookwithmanali.com/wp-content/uploads/2020/10/Cucumber-Raita-500x375.jpg"
         }
     ]

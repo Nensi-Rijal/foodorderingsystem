@@ -1,3 +1,69 @@
-<p>
-  Cart works!
-</p>
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div style="display: flex">
+      <div>
+        <div class="form-group">
+          <label for="productName">Product Name</label>
+          {{ data.Name }}
+        </div>
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input
+            (change)="calculate()"
+            type="number"
+            class="form-control"
+            min="1"
+            formControlName="quantity"
+            placeholder="quantity"
+          />
+        </div>
+        <div class="form-group">
+          <label for="rate">Rate</label>
+          ${{ data.Price }}
+        </div>
+        <div class="form-group">
+          <label for="totalprice">TotalPrice</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="totalPrice"
+            placeholder="TotalPrice"
+            readonly
+          />
+        </div>
+      </div>
+      <div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="address"
+            placeholder="address"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="cardno">Card No</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="cardno"
+            placeholder="cardno"
+          />
+        </div>
+        <div class="form-group">
+          <label for="expiry">Expiry</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="expiry"
+            placeholder="expiry"
+          />
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    {{ this.form.value | json }}
+  </form>
+</div>
