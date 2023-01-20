@@ -11,18 +11,27 @@ const baseUrl = "../assets/foods.json";
 })
 export class DetailsComponent implements OnInit {
 
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor
+  (private http: HttpClient, 
+    private activatedRoute: ActivatedRoute, 
+    private router: Router)
+    { }
+
+  //variable to store the id of the food
   id = this.activatedRoute.snapshot.paramMap.get('id');
+
+  //variable to store the details of the food
   food: any;
+
+
   ngOnInit() {
     this.loadDetails();
   }
 
+  //function to load the detail data from the json file
   loadDetails(){
-    this.http.get(baseUrl).subscribe((data: any)=>{
-      console.log(data);
-      this.food = data.find((food: any)=> food.id == this.id);
-      console.log(this.food);
+    this.http.get(baseUrl).subscribe((data: any)=>{ 
+      this.food = data.find((food: any)=> food.id == this.id); 
     })
   }
 

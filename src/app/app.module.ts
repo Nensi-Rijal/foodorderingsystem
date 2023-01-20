@@ -5,15 +5,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CartComponent } from './components/Cart/Cart.component';
 import { DetailsComponent } from './components/Details/Details.component';
-import { HomeComponent } from './components/Home/Home.component';
+import { HomeComponent } from './components/Home/Home.component'; 
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HomeComponent,
-    DetailsComponent
-  ],
+    DetailsComponent, 
+    CartComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

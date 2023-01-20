@@ -10,13 +10,18 @@ const baseUrl = "../assets/foods.json";
 })
 export class HomeComponent implements OnInit {
 
+  //variable to store the list of foods
   foodList: any;
-  constructor(private http: HttpClient,private router: Router) { }
+
+  constructor
+  ( private http: HttpClient,
+    private router: Router) { }
   
   ngOnInit(): void {  
     this.loadData();
   }
 
+  //function to load the data from the json file
   loadData(){
     this.http.get(baseUrl).subscribe(data => {
       this.foodList = data;
@@ -24,6 +29,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  //function to navigate to the details page
   onDetailClick(id: number){
     this.router.navigateByUrl('/details/' + id);
   }
